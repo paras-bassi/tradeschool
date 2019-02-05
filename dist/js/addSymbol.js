@@ -18,11 +18,8 @@ $(document).ready(function () {
 
         // {id: "S", text: "Sprint Corporation", 3. type: "Equity", 4. region: "United States", 5. marketOpen: "09:30", …}
         // Tranforms the top-level key of the response object from 'items' to 'results'
-        // "a=b,c:d".split('=').join(',').split(':').join(',').split(',')
-
         if (data) {
           data = JSON.parse(JSON.stringify(data).split('"1. symbol":').join('"id":').split('"2. name":').join('"text":'));
-          // data = JSON.parse(JSON.stringify(data).split('"2. name":').join('"text":'));
         } else
           console.log(data);
         return {
